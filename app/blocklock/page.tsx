@@ -78,10 +78,12 @@ const BlockLockPage = () => {
               </div>
               <div className="hidden sm:block">
                 <div className="w-full h-[280px] flex items-center justify-center">
-                  <img
+                  <Image
                     src="/assets/images/blocklock.gif"
                     alt="Encryption animation"
                     className="max-w-full max-h-full object-contain"
+                    width={500}
+                    height={500}
                   />
                 </div>
               </div>

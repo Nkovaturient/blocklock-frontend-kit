@@ -7,6 +7,12 @@ const nextConfig = {
     remotePatterns: [],
     unoptimized: true,
   },
+  webpack: (config: any) => {
+    // Ensure node:crypto is treated as external to avoid bundling errors
+    config.externals = config.externals || [];
+    config.externals.push({ 'node:crypto': 'crypto' });
+    return config;
+  },
 };
 
 export default nextConfig;

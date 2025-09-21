@@ -1,4 +1,4 @@
-import { ethers, getBytes, id } from "ethers";
+import { ethers, getBytes } from "ethers";
 import {
   Blocklock,
   encodeCiphertextToSolidity,
@@ -62,6 +62,7 @@ export const useEncrypt = () => {
 
     updateEstimate();
   }, [provider, secondsPerBlock, blocksAhead]);
+  
   const handleEncrypt = useMutation({
     mutationFn: async ({
       userMessage,
@@ -149,7 +150,7 @@ export const useEncrypt = () => {
 
       console.log("Transaction sent:", tx);
 
-      console.log("Request ID:", id);
+      // console.log("Request ID:", id);
       console.log("Ciphertext:", cipherMessage);
       setActiveTab("decrypt");
       setUserMessage(""); // Clear the input
@@ -167,5 +168,6 @@ export const useEncrypt = () => {
     userMessage,
     blocksAhead,
     estimatedDecryptionTime,
+    setEstimatedDecryptionTime,
   };
 };
