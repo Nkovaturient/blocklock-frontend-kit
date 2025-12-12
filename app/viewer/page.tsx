@@ -390,6 +390,8 @@ const MediaReleaseViewer = () => {
                               <div className="bg-gray-100 rounded-lg p-2">
                                 {decryptedMetadata.type.startsWith('image/') && (
                                   <Image
+                                    width={300}
+                                    height={450}
                                     src={mediaPreviewUrl}
                                     alt={decryptedMetadata.filename}
                                     className="max-w-full h-auto rounded-lg"
@@ -398,6 +400,8 @@ const MediaReleaseViewer = () => {
                                 )}
                                 {decryptedMetadata.type.startsWith('video/') && (
                                   <video
+                                    width={300}
+                                    height={450}
                                     src={mediaPreviewUrl}
                                     controls
                                     className="max-w-full h-auto rounded-lg"
